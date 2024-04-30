@@ -10,7 +10,7 @@ public class AppControllerTest {
     void probarHolaMundo() {
         AppController controller = new AppController();
         String texto = controller.holaMundo();
-        assertEquals("Hola mundo", texto);
+        assertEquals("Hoala mundo", texto);
 
     }
 }
