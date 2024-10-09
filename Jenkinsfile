@@ -12,10 +12,19 @@ pipeline {
             }
         }
 
-        stage('deploy') {
+        stage('package') {
             steps {
                 sh './mvnw package -Dmaven.test.skip'
-                sh 'cp ./target/app.war /deploy'
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                deploy adapters: [tomcat9(url: 'http://localhost:8080/', 
+                              credentialsId: 'tomcat')], 
+                     war: 'target/*.war',
+                     contextPath: 'app'
+
             }
         }
     }
