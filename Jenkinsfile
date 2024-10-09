@@ -20,7 +20,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                sh 'cp ./target/app.jar /deploy'
+                sh 'cp ./target/app.war /deploy'
 
             }
         }
