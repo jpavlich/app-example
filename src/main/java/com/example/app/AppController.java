@@ -13,4 +13,8 @@ public class AppController {
         return "Hola mundo";
     }
     
+    @GetMapping("/hola2")
+    public String holaMundo2() {
+        return "Hola mundo 2";
+    }
 }
